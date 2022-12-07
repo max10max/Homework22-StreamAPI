@@ -26,11 +26,11 @@ public class Main {
                 .map(person -> person.getFamily())
                 .collect(Collectors.toList());
 
-        List<String> workablePeople = persons.stream()
-                .filter(person -> ((person.getEducation().toString().equals("HIGHER") && person.getAge() >= 18 && person.getAge() < 60 && person.getSex().toString().equals("WOMAN"))  ||
-                        (person.getEducation().toString().equals("HIGHER") && person.getAge() >= 18 && person.getAge() < 65 && person.getSex().toString().equals("MAN"))))
+        List<Person> workablePeople = persons.stream()
+                .filter(person -> ((person.getEducation().toString().equals("HIGHER") && person.getAge() >= 18 && person.getAge() < 19 && person.getSex().toString().equals("WOMAN"))  ||
+                        (person.getEducation().toString().equals("HIGHER") && person.getAge() >= 18 && person.getAge() < 19 && person.getSex().toString().equals("MAN"))))
                 .sorted(Comparator.comparing(person -> person.getFamily()))
-                .map(person -> person.getFamily())
+           //     .map(person -> person.getFamily())
                 .collect(Collectors.toList());
 
         System.out.println(youngPeople);
